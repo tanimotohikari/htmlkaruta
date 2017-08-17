@@ -142,9 +142,9 @@ $(function() {
 
   // カードがクリックされた時の処理
   $('.js-karuta-card').on('click',function(e){
-    console.log('tesut');
     selectCard = $(this).val();
     e.preventDefault();
+    console.log(selectCard);
     socket.emit('emitFromClient', selectCard);
   });
 });
