@@ -108,6 +108,31 @@ display: none;
 </head>
 <body>
 <script>
+//問題に関する配列
+var question {
+  1:'改行を表す要素',
+  2:'テーブルのキャプションを表す要素',
+  3:'HTMLドキュメントのコンテンツ部分を表す要素',
+  4:'意味を持たないブロック要素',
+  5:'説明付きのリストを表す要素',
+  6:'dl要素のname-value(名前と値のペア)のうち、値の方をマークアップするための要素',
+  7:'周りのコンテンツから逸脱していることを表す要素',
+  8:'マークアップした範囲には、双方向アルゴリズムよりも優先して文字の方向を適用させるための要素',
+  9:'音声を再生するための要素',
+  10:'太字を表す要素',
+  11:'アンカーを表す要素',
+  12:'領域を表す要素',
+  13:'著者の連絡先情報を表す要素',
+  14:'グラフィックを描画するためのスペースを作る要素',
+  15:'HTMLドキュメント内で「自己完結するコンテンツのまとまり」を表す要素',
+  16:'言及されている作品のタイトルを表す要素',
+  17:'列のグループをさらに小さい単位に分けるために利用する要素',
+  18:'内容が、外部から引用したものであることを表す要素',
+  19:'省略語や頭字語を表す要素',
+  20:'列のグループを表す要素'
+};
+console.log();
+console.log(question[0]);
 //サーバー側とつなぐ
 var socket = io();
 
@@ -180,6 +205,7 @@ socket.on('selectKaruta', function(data) {
 </script>
   <p class="js-start-game btn-start">かるたゲームを始める</p>
   <!-- game-content start -->
+  <p class="question"></p>
   <div class="game-content is-hide">
     <form action="select.html">
       <ul class='area clearfix'>
@@ -201,6 +227,125 @@ socket.on('selectKaruta', function(data) {
           <li id="3" class="karuta">
             <span class="karuta-card">
               <input class="js-karuta-card" name="test" type="radio" value="3">< body >
+            </span>
+          </li>
+        </label>
+        <label>
+          <li id="4" class="karuta">
+            <span class="karuta-card">
+              <input class="js-karuta-card" name="test" type="radio" value="4">< div >
+            </span>
+          </li>
+        </label>
+        <label>
+          <li id="5" class="karuta">
+            <span class="karuta-card">
+              <input class="js-karuta-card" name="test" type="radio" value="5">< dl >
+            </span>
+          </li>
+        </label>
+        <label>
+          <li id="6" class="karuta">
+            <span class="karuta-card">
+              <input class="js-karuta-card" name="test" type="radio" value="6">< dd >
+            </span>
+          </li>
+        </label>
+        <label>
+          <li id="7" class="karuta">
+            <span class="karuta-card">
+              <input class="js-karuta-card" name="test" type="radio" value="7">< aside >
+            </span>
+          </li>
+        </label>
+        <label>
+          <li id="8" class="karuta">
+            <span class="karuta-card">
+              <input class="js-karuta-card" name="test" type="radio" value="8">< bdo >
+            </span>
+          </li>
+        </label>
+        <label>
+          <li id="9" class="karuta">
+            <span class="karuta-card">
+              <input class="js-karuta-card" name="test" type="radio" value="9">< audio >
+            </span>
+          </li>
+        </label>
+        <label>
+          <li id="10" class="karuta">
+            <span class="karuta-card">
+              <input class="js-karuta-card" name="test" type="radio" value="10">< b >
+            </span>
+          </li>
+        </label>
+        <label>
+          <li id="11" class="karuta">
+            <span class="karuta-card">
+              <input class="js-karuta-card" name="test" type="radio" value="11">< a >
+            </span>
+          </li>
+        </label>
+        <label>
+          <li id="12" class="karuta">
+            <span class="karuta-card">
+              <input class="js-karuta-card" name="test" type="radio" value="12">< area >
+            </span>
+          </li>
+        </label
+        <label>
+          <li id="13" class="karuta">
+            <span class="karuta-card">
+              <input class="js-karuta-card" name="test" type="radio" value="13">< address >
+            </span>
+          </li>
+        </label>
+        <label>
+          <li id="14" class="karuta">
+            <span class="karuta-card">
+              <input class="js-karuta-card" name="test" type="radio" value="14">< canvas >
+            </span>
+          </li>
+        </label>
+        <label>
+          <li id="15" class="karuta">
+            <span class="karuta-card">
+              <input class="js-karuta-card" name="test" type="radio" value="15">< article >
+            </span>
+          </li>
+        </label>
+        <label>
+          <li id="16" class="karuta">
+            <span class="karuta-card">
+              <input class="js-karuta-card" name="test" type="radio" value="16">< cite >
+            </span>
+          </li>
+        </label>
+        <label>
+          <li id="17" class="karuta">
+            <span class="karuta-card">
+              <input class="js-karuta-card" name="test" type="radio" value="17">< col >
+            </span>
+          </li>
+        </label>
+        <label>
+          <li id="18" class="karuta">
+            <span class="karuta-card">
+              <input class="js-karuta-card" name="test" type="radio" value="18">< blockquote >
+            </span>
+          </li>
+        </label>
+        <label>
+          <li id="19" class="karuta">
+            <span class="karuta-card">
+              <input class="js-karuta-card" name="test" type="radio" value="19">< addr >
+            </span>
+          </li>
+        </label>
+        <label>
+          <li id="20" class="karuta">
+            <span class="karuta-card">
+              <input class="js-karuta-card" name="test" type="radio" value="20">< colgroup >
             </span>
           </li>
         </label>
