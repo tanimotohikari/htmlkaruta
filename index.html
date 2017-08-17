@@ -140,6 +140,15 @@ $(function() {
     $('.game-content').removeClass('is-hide');
     $('.chat-content').addClass('is-hide');
   });
+
+  // カードがクリックされた時の処理
+  $('.js-karuta-card').on('click',function(e){
+    selectCard = $(this).val();
+    e.preventDefault();
+    socket.json.emit('emitFromClient', {
+      select: selectCard,
+    });
+  });
 });
 
 //ここで作ったイベント名でサーバーサイドの処理を紐付ける
@@ -166,15 +175,6 @@ socket.on('changeChannel', function(channel) {
 socket.on('getId', function(id) {
   // チャンネルが変わったことをメッセージで表示
   $('#user_name p').html('').text(id);
-});
-
-// カードがクリックされた時の処理
-$('.js-karuta-card').on('click',function(e){
-  selectCard = $(this).val();
-  e.preventDefault();
-  socket.json.emit('emitFromClient', {
-    select: selectCard,
-  });
 });
 
 </script>
