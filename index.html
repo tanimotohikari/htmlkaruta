@@ -110,6 +110,8 @@ $(function() {
   // game開始のリンクタグがクリックされたとき
   $('.js-start-game').on('click', function(){
     console.log('tesut');
+    $('.game-content').removeClass('is-hide');
+    $('.chat-content').addClass('is-hide');
   });
 });
 
