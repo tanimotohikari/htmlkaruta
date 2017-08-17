@@ -77,8 +77,8 @@ io.on('connection', function(socket) {
   //かるたがクリックされた時の処理
   socket.on('emitFromClient', function(data) {
     console.log(data);
-    io.sockets.in(channel).emit('emitFromServer', data);
-    socket.broadcast.to.(channel).emit('emitFromServer', data);
+    //io.sockets.in(channel).emit('emitFromServer', data);
+    //socket.broadcast.to.(channel).emit('emitFromServer', data);
   });
 });
 
