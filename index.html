@@ -136,18 +136,16 @@ $(function() {
 
   // game開始のリンクタグがクリックされたとき
   $('.js-start-game').on('click', function(){
-    console.log('tesut');
     $('.game-content').removeClass('is-hide');
     $('.chat-content').addClass('is-hide');
   });
 
   // カードがクリックされた時の処理
   $('.js-karuta-card').on('click',function(e){
+    console.log('tesut');
     selectCard = $(this).val();
     e.preventDefault();
-    socket.json.emit('emitFromClient', {
-      select: selectCard,
-    });
+    socket.emit('emitFromClient', selectCard);
   });
 });
 
