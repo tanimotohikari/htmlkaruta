@@ -67,7 +67,7 @@ ul {
 </head>
 <body>
 <script>
-//サーバー側とつなぐため
+//サーバー側とつなぐ
 var socket = io();
 
 $(function() {
@@ -120,7 +120,7 @@ socket.on('getId', function(id) {
   $('#user_name p').html('').text(id);
 });
 </script>
-  <a href="game.php">かるたゲームはこっち</a>
+  <a href="karuta.html">かるたゲームはこっち</a>
   <div id="info">
     <div id="user_name">あなたのID&nbsp;:&nbsp;<p></p></div>
     <div id="user_cnt">アクティブユーザ&nbsp;:&nbsp;<p></p></div>
