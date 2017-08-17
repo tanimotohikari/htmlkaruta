@@ -79,7 +79,7 @@ io.on('connection', function(socket) {
     io.sockets.emit('emitFromServer', data.select);
     socket.emit('emitFromServer', data);
     socket.broadcast.emit('emitFromServer', data.select);
-  )}
+  });
 });
 
 //接続待ち状態になる
