@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-<title>chat | node.jsとexpressで作ったリアルタイムチャット</title>
+<title>HTML karuta</title>
 <style>
 * {
   padding: 0;
@@ -74,6 +74,33 @@ display: none;
   text-align: center;
   margin: 10px;
   cursor: pointer;
+}
+/*かるたに関するcss*/
+.karuta {
+  display: table;
+  text-align: center;
+  width: 130px;
+  height: 185px;
+  float: left;
+  margin: 5px;
+  background: #aaa;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+.karuta-card {
+  height: 148px;
+  display: table-cell;
+  margin: 3px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  vertical-align: middle;
+}
+.karuta-card input {
+  -webkit-appearance: none;
+}
+.is-select {
+  background: #e53!important;
 }
 </style>
 <script src="/socket.io/socket.io.js"></script>
@@ -159,10 +186,40 @@ $('.btn-select').on('click', function(e){
 
 </script>
   <p class="js-start-game btn-start">かるたゲームを始める</p>
-  <!-- ▲chat-content end -->
+  <!-- game-content start -->
   <div class="game-content is-hide">
-  aaaaaaS
+    <form action="select.html">
+      <select id="rooms">
+        <option value="room-1">Room 1</option>
+        <option value="room-2">Room 2</option>
+      </select>
+      <input class="btn-select" type="submit" value="select">
+      <ul class='area is-hide clearfix'>
+        <label>
+          <li id="1" class="karuta">
+            <span class="karuta-card">
+              <input class="js-karuta-card" name="test" type="radio" value="1">< br >
+            </span>
+          </li>
+        </label>
+        <label>
+          <li id="2" class="karuta">
+            <span class="karuta-card">
+              <input class="js-karuta-card" name="test" type="radio" value="2">< caption >
+            </span>
+          </li>
+        </label>
+        <label>
+          <li id="3" class="karuta">
+            <span class="karuta-card">
+              <input class="js-karuta-card" name="test" type="radio" value="3">< body >
+            </span>
+          </li>
+        </label>
+      </ul>
+    </form>
   </div>
+  <!-- ▲game-content end -->
   <!-- ▼chat-content start -->
   <div class="chat-content">
     <div id="info">
