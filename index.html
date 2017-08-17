@@ -19,6 +19,9 @@ ul {
   background: #000;
   color: white;
 }
+a {
+  cursor: pointer;
+}
 #controls {
   position: absolute;
   bottom: 0px;
@@ -63,6 +66,14 @@ ul {
 }
 .is-hide {
 display: none;
+}
+.btn-start {
+  width: 200px;
+  padding: 5px 10px;
+  border: 1px solid;
+  text-align: center;
+  margin: 10px;
+  cursor: pointer;
 }
 </style>
 <script src="/socket.io/socket.io.js"></script>
@@ -145,7 +156,7 @@ $('.btn-select').on('click', function(e){
 });
 
 </script>
-  <p class="js-start-game">かるたゲームを始める</p>
+  <p class="js-start-game btn-start">かるたゲームを始める</p>
   <!-- ▲chat-content end -->
   <div class="game-content is-hide">
   aaaaaaS
