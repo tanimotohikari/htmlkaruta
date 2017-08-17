@@ -61,6 +61,9 @@ ul {
 #user_cnt p {
   display: inline-block;
 }
+.is-hide {
+display: none;
+}
 </style>
 <script src="/socket.io/socket.io.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.js"></script>
@@ -94,7 +97,7 @@ $(function() {
   });
 });
 
-//ここで作ったイベント名でサーバーサイドの処理を紐付ける-->
+//ここで作ったイベント名でサーバーサイドの処理を紐付ける
 socket.on('welcome', function() {
   // 取得したメッセージをulに追加
   $('#message').append($('<li>').text('ようこそ！！'));
@@ -119,22 +122,52 @@ socket.on('getId', function(id) {
   // チャンネルが変わったことをメッセージで表示
   $('#user_name p').html('').text(id);
 });
+
+// game開始のリンクタグがクリックされたとき
+$('.js-start-game').on('click', function(){
+  console.log('tesut');
+});
+
+// カードがクリックされた時の処理
+$('.js-karuta-card').on('click',function(e){
+  selectCard = $(this).val();
+  e.preventDefault();
+  socket.json.emit('emit_from_client', {
+    select: selectCard,
+  });
+});
+
+$('.btn-select').on('click', function(e){
+  e.preventDefault();
+  socket.json.emit('emit_from_client', {
+    room: $('#rooms').val()
+  });
+});
+
 </script>
-  <a href="karuta.html">かるたゲームはこっち</a>
-  <div id="info">
-    <div id="user_name">あなたのID&nbsp;:&nbsp;<p></p></div>
-    <div id="user_cnt">アクティブユーザ&nbsp;:&nbsp;<p></p></div>
+  <a class="js-start-game" href="karuta.html">かるたゲームを始める</a>
+  <!-- ▲chat-content end -->
+  <div class="game-content is-hide">
+  aaaaaaS
   </div>
-  <ul id="message"></ul>
-  <div id="controls">
-    <form action="">
-    <select name="channel" id="channel">
-      <option value="A">チャンネルA</option>
-      <option value="B">チャンネルB</option>
-    </select>
-    <input type="text" id="msj" placeholder="メッセージを入力してください...">
-    <input type="submit" id="btn" value="送信">
-    </form> 
- </div>
+  <!-- ▼chat-content start -->
+  <div class="chat-content">
+    <div id="info">
+      <div id="user_name">あなたのID&nbsp;:&nbsp;<p></p></div>
+      <div id="user_cnt">アクティブユーザ&nbsp;:&nbsp;<p></p></div>
+    </div>
+    <ul id="message"></ul>
+    <div id="controls">
+      <form action="">
+      <select name="channel" id="channel">
+        <option value="A">チャンネルA</option>
+        <option value="B">チャンネルB</option>
+      </select>
+      <input type="text" id="msj" placeholder="メッセージを入力してください...">
+      <input type="submit" id="btn" value="送信">
+      </form> 
+    </div>
+  </div>
+  <!-- ▲chat-content end -->
 </body>
 </html>
