@@ -172,15 +172,8 @@ socket.on('getId', function(id) {
 $('.js-karuta-card').on('click',function(e){
   selectCard = $(this).val();
   e.preventDefault();
-  socket.json.emit('emit_from_client', {
+  socket.json.emit('emitFromClient', {
     select: selectCard,
-  });
-});
-
-$('.btn-select').on('click', function(e){
-  e.preventDefault();
-  socket.json.emit('emit_from_client', {
-    room: $('#rooms').val()
   });
 });
 

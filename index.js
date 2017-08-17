@@ -73,6 +73,13 @@ io.on('connection', function(socket) {
     socket.emit('changeChannel', channel); //チャンネルを変えたこと自分に送信
     socket.broadcast.to(channel).emit('message', socket.id + 'さんが入室しました！', 'system');//ルーム内の自分以外
   });
+
+  //かるたがクリックされた時の処理
+  socket.on('emitFromClient', function(data) {
+    io.sockets.emit('emitFromServer', data.select);
+    socket.emit('emitFromServer', data);
+    socket.broadcast.emit('emitFromServer', data.select);
+  )}
 });
 
 //接続待ち状態になる
