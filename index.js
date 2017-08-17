@@ -77,8 +77,7 @@ io.on('connection', function(socket) {
   //かるたがクリックされた時の処理
   socket.on('select', function(data) {
     console.log(data);
-    //io.sockets.in(channel).emit('emitFromServer', data);
-    socket.broadcast.to.(channel).emit('selectKaruta', data);
+    io.sockets.in(channel).emit('selectKaruta', data);
   });
 });
 
