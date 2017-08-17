@@ -78,7 +78,7 @@ io.on('connection', function(socket) {
   socket.on('select', function(data) {
     console.log(data);
     //io.sockets.in(channel).emit('emitFromServer', data);
-    //socket.broadcast.to.(channel).emit('emitFromServer', data);
+    socket.broadcast.to.(channel).emit('selectKaruta', data);
   });
 });
 

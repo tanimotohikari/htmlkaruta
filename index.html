@@ -172,7 +172,7 @@ socket.on('getId', function(id) {
   $('#user_name p').html('').text(id);
 });
 
-socket.on('selectaruta', function(data) {
+socket.on('selectKaruta', function(data) {
   // 選択されたかるたの色を変える
   $('#' + data).addClass('is-select');
 });
