@@ -1,4 +1,4 @@
-# HTML5 カルタ　~リアルタイム対戦への道~
+# HTML5 カルタ　-リアルタイム対戦への道-
 
 ##　今回使ったサービス及び言語
 
@@ -9,7 +9,7 @@
 - css
 - [Express](https://www.heroku.com/home)
 
-##　Expressとは？
+## Expressとは？
 Expressは「node.js」のフレームワーク
 
 ## Herokuとは？
